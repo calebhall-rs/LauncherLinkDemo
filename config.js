@@ -123,6 +123,26 @@ function ccShowInviteForm(appPrefix, packageToken) {
         document.getElementById('ccInviteStatus').textContent = 'Launching your training, please wait...';
 
         overlay.remove();
-        prepareLaunch(appPrefix, packageToken);
+        ccLoadLauncherScripts(appPrefix, packageToken);
+    });
+}
+
+function ccLoadScript(src, onload) {
+    var script = document.createElement('script');
+    script.src = src;
+    script.onload = onload;
+    document.head.appendChild(script);
+}
+
+function ccLoadLauncherScripts(appPrefix, packageToken) {
+    // ccLauncherConfig must be fully populated before these load: the Content
+    // Controller launcher scripts read it as soon as they execute, not lazily
+    // when prepareLaunch() is called.
+    ccLoadScript('https://rustici.contentcontroller.com/launcherlink/3rd.js?v=3.2', function () {
+        ccLoadScript('https://rustici.contentcontroller.com/launcherlink/launcherinit.js?v=3.2', function () {
+            ccLoadScript('https://rustici.contentcontroller.com/launcherlink/ssla.min.js?v=3.2', function () {
+                prepareLaunch(appPrefix, packageToken);
+            });
+        });
     });
 }
