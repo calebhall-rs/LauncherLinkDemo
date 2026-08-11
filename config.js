@@ -37,7 +37,7 @@ function ccShowInviteForm(appPrefix, packageToken) {
     overlay.id = 'ccInviteOverlay';
     overlay.innerHTML = [
         '<div id="ccInviteCard">',
-        '  <img src="images/logo2.png" alt="" />',
+        '  <img src="images/fake-learning-logo.png" alt="" />',
         '  <h1>Please enter your info and we will move you right along.</h1>',
         '  <p>Your correct email will ensure you receive proper credit for your training.</p>',
         '  <form id="ccInviteForm" novalidate>',
