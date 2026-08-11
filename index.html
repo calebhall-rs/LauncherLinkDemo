@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link href="style/interface.css?v=3.2" rel="stylesheet" type="text/css">
+    <script>
+        var ccAppPrefix = "https://rustici.contentcontroller.com";
+        var ccPackageToken = "b3823437-e343-40ab-a5f7-5a25d6ecdc2b";
+    </script>
+    <script src="https://rustici.contentcontroller.com/launcherlink/3rd.js?v=3.2" type="text/javascript"></script>
+    <script src="config.js?v=3.2" type="text/javascript"></script>
+    <script src="https://rustici.contentcontroller.com/launcherlink/launcherinit.js?v=3.2" type="text/javascript"></script>
+    <script src="https://rustici.contentcontroller.com/launcherlink/ssla.min.js?v=3.2" type="text/javascript"></script>
+</head>
+
+<body onload="prepareLaunch(ccAppPrefix, ccPackageToken)" onbeforeunload="ssla.finish()" class="hide-menu hide-toc">
+<div class="jca-navigation-menu">
+    <img id="logo" src="images/logo2.png" />
+    <div class="player-exit">
+        <button class="nav-button" id="exit" onClick="ssla.navigate('exit')">Exit</button>
+    </div>
+    <div class="sco-navigation">
+        <button class="nav-button" id="closeActive" onClick="ssla.closeActiveContent()">Close Activity</button>
+        <button class="nav-button" id="prev" onClick="ssla.navigate('previous')">Previous</button>
+        <button class="nav-button" id="next" onClick="ssla.navigate('next')">Next</button>
+    </div>
+</div>
+<div class="jca-toc-holder">
+    <div id="title">
+        <!-- Placeholder Title -->
+    </div>
+    <div id="toc">
+    </div>
+</div>
+
+<div id="frame-here">
+</div>
+
+</body>
+</html>

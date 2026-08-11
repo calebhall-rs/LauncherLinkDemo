@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interstitial</title>
+    <style type="text/css">
+        html, body {
+            background-color: white;
+            height: 100%;
+        }
+        * {
+            margin: 0;
+        }
+        body
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <script>
+        function sslaHandle() {
+            if (window.opener) {
+                return window.opener.ssla;
+            }
+            else if (window.parent) {
+                return window.parent.ssla;
+            }
+        }
+
+        function ready() {
+            sslaHandle().interstitialReady();
+        }
+
+    </script>
+</head>
+<body onload="ready()">
+    <div id="content" class="center-div">Please wait...</div>
+</body>
+</html>
